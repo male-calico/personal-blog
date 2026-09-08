@@ -266,8 +266,28 @@ main > h2 {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .featured-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .featured-main {
+    grid-column: 1 / -1;
+  }
+
+  .featured-side {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-side {
     grid-template-columns: 1fr;
   }
 }
