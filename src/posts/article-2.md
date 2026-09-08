@@ -1,13 +1,43 @@
 ---
 layout: article.njk
-title: "個人ブログを作ってみて感じたこと"
-date: 2026-09-07
+title: "個人ブログの構成について"
+date: 2026-09-06
 category: "BLOG"
 tags: posts
+image: "/images/featured-1.jpg"
 ---
 
-個人ブログを実際に作り始めて、いくつか気づいたことがあります。
+- personal-blog/
+    - src/
+        - index.md
+        - about.md
+        - posts/  
+            - article-1.md
+            - article-2.md
+            - article-3.md
+        - css/
+            - style.css
+        - images/
+            - article-1/
+            - article-2/
+    - _site/ （11tyが自動生成）
+    - eleventy.config.js
+    - package.json
+    - package-lock.json
+    - node_modules/
 
-Markdownで記事を書き、EleventyでHTMLに変換することで、比較的シンプルな構成にできます。
+#### 役割
+- src/：自分で作成するWebコンテンツ全般
+- index.md：トップページ
+- about.md：プロフィールなどの固定ページ
+- posts/：ブログ記事のMarkdown
+- css/：CSSファイル
+- images/：ブログで使用する画像
+- _site/：11tyが自動生成する完成品
+- eleventy.config.js：11tyの設定
+- package.json：プロジェクトの設定・使用パッケージ
+- package-lock.json：パッケージの正確なバージョンを記録
+- node_modules/：インストールされたNode.jsパッケージ
 
-今回はテスト記事として、ブログの表示やレイアウトを確認するための記事を作成しました。
+特に重要なのは、src と _site を明確に分けることです。
+

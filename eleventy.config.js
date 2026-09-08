@@ -5,8 +5,8 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");
-
   return {
+    pathPrefix: "/personal-blog/",
     dir: {
       input: "src",
       output: "_site",

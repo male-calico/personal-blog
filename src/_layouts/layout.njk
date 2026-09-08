@@ -4,26 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title or "My Personal Blog" }}</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 </head>
 <body>
-
   <header class="site-header">
     <div class="site-title">
-      <a href="/">My Personal Blog</a>
+      <a href="{{ '/' | url }}">My Personal Blog</a>
     </div>
-
     <nav class="site-nav">
-      <a href="/">Home</a>
-      <a href="/about/">About</a>
-      <a href="/categories/">Categories</a>
-      <a href="/search/">Search</a>
+      <a href="{{ '/' | url }}">Home</a>
+      <a href="{{ '/about/' | url }}">About</a>
+      <a href="{{ '/categories/' | url }}">Categories</a>
+      <a href="{{ '/search/' | url }}">Search</a>
     </nav>
   </header>
-
   <main>
     {{ content | safe }}
   </main>
-
 </body>
 </html>

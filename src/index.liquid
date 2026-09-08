@@ -11,7 +11,7 @@ layout: layout.njk
   {% if featured %}
   <article class="featured-main">
     <a href="{{ featured.url }}">
-      <img class="article-image" src="/images/featured.jpg" alt="個人ブログの構成について">
+      <img class="article-image" src="{{ featured.data.image | url }}" alt="{{ featured.data.title }}">
       <p class="article-meta">{{ featured.data.category }} · {{ featured.date | date: "%Y.%m.%d" }}</p>
       <h2>{{ featured.data.title }}</h2>
     </a>
@@ -22,7 +22,7 @@ layout: layout.njk
     {% for post in posts offset: 1 limit: 2 %}
     <article class="featured-card">
       <a href="{{ post.url }}">
-        <div class="article-image">Image</div>
+        <img class="article-image" src="{{ post.data.image | url }}" alt="{{ post.data.title }}">
         <p class="article-meta">{{ post.data.category }} · {{ post.date | date: "%Y.%m.%d" }}</p>
         <h3>{{ post.data.title }}</h3>
       </a>
@@ -43,7 +43,7 @@ layout: layout.njk
         <h3>{{ post.data.title }}</h3>
       </a>
     </div>
-    <div class="article-thumbnail">Image</div>
+    <img class="article-thumbnail" src="{{ post.data.image | url }}" alt="{{ post.data.title }}">
   </article>
   {% endfor %}
 </div>
