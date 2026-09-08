@@ -11,6 +11,11 @@
     <div class="site-title">
       <a href="{{ '/' | url }}">My Personal Blog</a>
     </div>
+
+    <button class="menu-button" type="button" aria-label="メニューを開く">
+      ≡
+    </button>
+
     <nav class="site-nav">
       <a href="{{ '/' | url }}">Home</a>
       <a href="{{ '/about/' | url }}">About</a>
@@ -21,5 +26,14 @@
   <main>
     {{ content | safe }}
   </main>
+
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const siteNav = document.querySelector(".site-nav");
+
+    menuButton.addEventListener("click", () => {
+      siteNav.classList.toggle("is-open");
+    });
+  </script>  
 </body>
 </html>

@@ -14,6 +14,7 @@ layout: layout.njk
       <img class="article-image" src="{{ featured.data.image | url }}" alt="{{ featured.data.title }}">
       <p class="article-meta">{{ featured.data.category }} · {{ featured.date | date: "%Y.%m.%d" }}</p>
       <h2>{{ featured.data.title }}</h2>
+      <p class="featured-excerpt">{{ featured.templateContent | strip_html | truncate: 120 }}</p>
     </a>
   </article>
   {% endif %}
@@ -36,14 +37,15 @@ layout: layout.njk
 
 <div class="latest-list">
   {% for post in posts offset: 3 %}
-  <article class="latest-card">
+<article class="latest-card">
+  <a href="{{ post.url | url }}" class="latest-card-link">
     <div>
-      <a href="{{ post.url | url }}">
-        <p class="article-meta">{{ post.data.category }} · {{ post.date | date: "%Y.%m.%d" }}</p>
-        <h3>{{ post.data.title }}</h3>
-      </a>
+      <p class="article-meta">{{ post.data.category }} · {{ post.date | date: "%Y.%m.%d" }}</p>
+      <h3>{{ post.data.title }}</h3>
     </div>
+
     <img class="article-thumbnail" src="{{ post.data.image | url }}" alt="{{ post.data.title }}">
-  </article>
+  </a>
+</article>
   {% endfor %}
 </div>
