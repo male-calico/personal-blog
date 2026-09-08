@@ -10,7 +10,7 @@ layout: layout.njk
 
   {% if featured %}
   <article class="featured-main">
-    <a href="{{ featured.url }}">
+    <a href="{{ featured.url | url }}">
       <img class="article-image" src="{{ featured.data.image | url }}" alt="{{ featured.data.title }}">
       <p class="article-meta">{{ featured.data.category }} · {{ featured.date | date: "%Y.%m.%d" }}</p>
       <h2>{{ featured.data.title }}</h2>
@@ -21,7 +21,7 @@ layout: layout.njk
   <div class="featured-side">
     {% for post in posts offset: 1 limit: 2 %}
     <article class="featured-card">
-      <a href="{{ post.url }}">
+      <a href="{{ post.url | url }}">
         <img class="article-image" src="{{ post.data.image | url }}" alt="{{ post.data.title }}">
         <p class="article-meta">{{ post.data.category }} · {{ post.date | date: "%Y.%m.%d" }}</p>
         <h3>{{ post.data.title }}</h3>
@@ -38,7 +38,7 @@ layout: layout.njk
   {% for post in posts offset: 3 %}
   <article class="latest-card">
     <div>
-      <a href="{{ post.url }}">
+      <a href="{{ post.url | url }}">
         <p class="article-meta">{{ post.data.category }} · {{ post.date | date: "%Y.%m.%d" }}</p>
         <h3>{{ post.data.title }}</h3>
       </a>
