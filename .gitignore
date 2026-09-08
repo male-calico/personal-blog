@@ -1,0 +1,9 @@
+.env
+*.key
+*.pem
+.DS_Store
+node_modules/
+_site/
+*.bak
+Reference-image-1.jpg
+Reference-image-2.jpg

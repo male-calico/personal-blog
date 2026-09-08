@@ -1,0 +1,14 @@
+---
+layout: layout.njk
+---
+
+<article class="article">
+  <header class="article-header">
+    <p class="article-meta">{{ category }} · {{ date | date("%Y.%m.%d") }}</p>
+    <h1>{{ title }}</h1>
+  </header>
+
+  <div class="article-content">
+    {{ content | safe }}
+  </div>
+</article>

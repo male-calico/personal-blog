@@ -1,0 +1,49 @@
+---
+layout: layout.njk
+---
+
+<h1>Selected Articles</h1>
+
+<div class="featured-grid">
+  {% assign posts = collections.posts | reverse %}
+  {% assign featured = posts | first %}
+
+  {% if featured %}
+  <article class="featured-main">
+    <a href="{{ featured.url }}">
+      <img class="article-image" src="/images/featured.jpg" alt="個人ブログの構成について">
+      <p class="article-meta">{{ featured.data.category }} · {{ featured.date | date: "%Y.%m.%d" }}</p>
+      <h2>{{ featured.data.title }}</h2>
+    </a>
+  </article>
+  {% endif %}
+  
+  <div class="featured-side">
+    {% for post in posts offset: 1 limit: 2 %}
+    <article class="featured-card">
+      <a href="{{ post.url }}">
+        <div class="article-image">Image</div>
+        <p class="article-meta">{{ post.data.category }} · {{ post.date | date: "%Y.%m.%d" }}</p>
+        <h3>{{ post.data.title }}</h3>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+
+</div>
+
+<h2>Recent Articles</h2>
+
+<div class="latest-list">
+  {% for post in posts offset: 3 %}
+  <article class="latest-card">
+    <div>
+      <a href="{{ post.url }}">
+        <p class="article-meta">{{ post.data.category }} · {{ post.date | date: "%Y.%m.%d" }}</p>
+        <h3>{{ post.data.title }}</h3>
+      </a>
+    </div>
+    <div class="article-thumbnail">Image</div>
+  </article>
+  {% endfor %}
+</div>
