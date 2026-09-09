@@ -209,6 +209,12 @@ main > h2 {
   border-bottom: 1px solid rgba(89, 99, 106, 0.5);
 }
 
+.article-content hr {
+  border: 0;
+  border-top: 1px solid rgba(89, 99, 106, 0.5);
+  margin: 2em 0;
+}
+
 .article-meta {
   font-size: 0.85rem;
   color: #B5BEC0;
@@ -242,7 +248,7 @@ main > h2 {
   margin-top: 3em;
   margin-bottom: 1em;
   font-size: 1.6rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgba(89, 99, 106, 0.5);
   padding-bottom: 10px;
 }
 
